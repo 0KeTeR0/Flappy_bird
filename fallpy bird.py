@@ -132,7 +132,6 @@ class Pipe:
         return False
 
 
-
 class Base:
     VEL = 5
     WIDTH = BASE_IMG.get_width()
@@ -158,7 +157,6 @@ class Base:
         win.blit(self.IMG, (self.x2, self.y))
 
 
-
 def draw_window(win, birds, pipes, base, score, gen):
     win.blit(BG_IMG, (0,0))
 
@@ -177,6 +175,7 @@ def draw_window(win, birds, pipes, base, score, gen):
         bird.draw(win)
 
     pygame.display.update()
+
 
 def main(genomes, config):
     global GEN
@@ -270,7 +269,6 @@ def main(genomes, config):
         draw_window(win, birds, pipes, base, score, GEN)
 
 
-
 def run(config_path):
     config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction, neat.DefaultSpeciesSet, neat.DefaultStagnation, config_path)
 
@@ -283,14 +281,8 @@ def run(config_path):
     winner = p.run(main,50)
 
 
-
 if __name__ == "__main__":
     local_dir = os.path.dirname(__file__)
     config_path = os.path.join(local_dir, "config-feedforward.txt")
     run(config_path)
-
-
-
-
-
 
